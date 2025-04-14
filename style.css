@@ -1,7 +1,10 @@
 :root {
     --text-color: black;
+    --secondary-text-color: white;
     --background-color: #bb9457;
     --secondary-background-color: #FFE6A7;
+    --button-main-color: #432818;
+    --button-hover-color: #99582a;
 }
 
 .poetsen-one-regular {
@@ -44,6 +47,7 @@ main{
     padding-top: 4rem;
     display: flex;
 }
+
 .main-left, .main-right {
     display: flex;
     flex-direction: column;
@@ -53,7 +57,23 @@ main{
     width: 50%;
 }
 
+.title {
+    padding-bottom: 1rem;
+}
+
 .profile-pic{
     padding-top: 4rem;
     width: 25rem;
+}
+
+.btn-wrapper{
+    padding-top: 1rem;
+}
+
+.btn {
+    color: var(--secondary-text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: var(--button-main-color);
+    text-decoration: none;
 }
