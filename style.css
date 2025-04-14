@@ -96,8 +96,14 @@ main{
         font-size: 1rem;
         gap: 1rem;
     }
+    .main-left p {
+        width: 20rem;
+    }
     .profile-pic{
         width: 20rem;
+    }
+    .navbar-right img {
+        height: 1.4rem;
     }
 }
 
