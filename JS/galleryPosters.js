@@ -10,10 +10,13 @@ const imageFilenames = [
   const gallery = document.getElementById("gallery");
 
   imageFilenames.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.alt = "Poster";
-    img.style.width = "400px";
-    img.style.margin = "10px";
-    gallery.appendChild(img);
+    const div = document.createElement("div");
+  
+    div.classList.add("poster-wrapper");
+    div.style.backgroundImage = `url(${src})`;
+    div.style.backgroundPosition = "center";
+    div.style.backgroundSize = "cover";
+    div.style.backgroundRepeat = "no-repeat";
+  
+    gallery.appendChild(div);
   });
