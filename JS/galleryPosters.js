@@ -9,6 +9,24 @@ const imageFilenames = [
 
   const gallery = document.getElementById("gallery");
 
+  // Modal elements
+  const modal = document.createElement("div");
+  modal.id = "image-modal";
+  modal.className = "modal hidden";
+
+  const closeBtn = document.createElement("span");
+  closeBtn.id = "close-modal";
+  closeBtn.innerHTML = "&times;";
+
+  const modalImg = document.createElement("img");
+  modalImg.id = "modal-img";
+  modalImg.alt = "Full-size";
+
+  modal.appendChild(closeBtn);
+  modal.appendChild(modalImg);
+  document.body.appendChild(modal);
+
+
   imageFilenames.forEach(src => {
     const div = document.createElement("div");
   
@@ -18,5 +36,22 @@ const imageFilenames = [
     div.style.backgroundSize = "cover";
     div.style.backgroundRepeat = "no-repeat";
   
+    div.addEventListener("click", () => {
+      modalImg.src = src;
+      modal.classList.remove("hidden");
+    });
+
     gallery.appendChild(div);
   });
+
+  // Close modal on X click
+closeBtn.addEventListener("click", () => {
+  modal.classList.add("hidden");
+});
+
+// Optional: click outside image closes modal
+modal.addEventListener("click", e => {
+  if (e.target === modal) {
+    modal.classList.add("hidden");
+  }
+});

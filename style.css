@@ -151,6 +151,7 @@ main{
     border-radius: 1rem;
     background-color: var(--secondary-background-color);
     transition: all 0.2s;
+    cursor: zoom-in;
 }
 
 .image-wrapper:hover, .poster-wrapper:hover{
@@ -170,6 +171,39 @@ main{
     transform: translate(-50%, -50%);
     
 }
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .modal img {
+    max-width: 95%;
+    max-height: 95%;
+    border-radius: 1rem;
+  }
+  
+  .modal.hidden {
+    display: none;
+  }
+  
+  #close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+  
 
 @media (max-width: 768px) {
     main {
